@@ -1,4 +1,32 @@
-<!-- NG-ZORRO -->
-<a href="https://github.com/NG-ZORRO/ng-zorro-antd" target="_blank" style="display: flex;align-items: center;justify-content: center;height: 100%;width: 100%;">
-  <img height="300" src="https://img.alicdn.com/tfs/TB1X.qJJgHqK1RjSZFgXXa7JXXa-89-131.svg">
-</a>
+<nz-layout >
+  <nz-header>
+    <div nz-row [nzGutter]="[16, 24]" nzJustify="center">
+      <div nz-col class="gutter-row" [nzSpan]="3" *ngFor="let headerNavTitle of navigationBarList">
+        <div class="grid-config">{{headerNavTitle}}</div>
+      </div>
+    </div>
+    <span>{{navigationBarList}}</span>
+  </nz-header>
+  <nz-content>
+
+
+    <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">
+      <nz-card-meta nzTitle="Europe Street beat" nzDescription="www.instagram.com"></nz-card-meta>
+    </nz-card>
+    <ng-template #coverTemplate>
+      <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+    </ng-template>
+
+    <nz-pagination [nzPageIndex]="3" [nzTotal]="500" nzShowSizeChanger [nzPageSize]="10"></nz-pagination>
+  </nz-content>
+  <nz-footer>
+    <div nz-row [nzGutter]="[16, 24]" nzJustify="center">
+      <div nz-col class="gutter-row" [nzSpan]="3" *ngFor="let footNavTitle of footerNavBar">
+        <div class="grid-config">{{footNavTitle}}</div>
+      </div>
+    </div>
+    <nz-divider></nz-divider>
+    Copyright © 2020 ypppt.com All Rights Reserved.
+    <nz-back-top></nz-back-top>
+  </nz-footer>
+</nz-layout>

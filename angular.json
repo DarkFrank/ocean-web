@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "ocean-web"
+  "defaultProject": "ocean-web",
+  "cli": {
+    "analytics": false
+  }
 }
