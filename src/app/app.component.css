@@ -1,42 +1,40 @@
+/*
 :host {
   text-align: center;
 }
-
-nz-header,
-nz-footer {
-  background: #7dbcea;
-  color: #fff;
+*/
+/*整体布局样式*/
+.logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 24px 16px 0;
+  float: left;
 }
 
-nz-footer {
-  line-height: 1.5;
+[nz-menu] {
+  line-height: 64px;
 }
 
-nz-sider {
-  background: #3ba0e9;
-  color: #fff;
-  line-height: 120px;
+nz-breadcrumb {
+  margin: 16px 0;
 }
 
 nz-content {
-  background: rgba(16, 142, 233, 1);
-  color: #fff;
-  min-height: 120px;
-  line-height: 120px;
+  padding: 0 50px;
 }
 
-nz-layout {
-  margin-bottom: 48px;
+nz-footer {
+  text-align: center;
 }
 
-nz-layout:last-child {
-  margin: 0;
+.inner-content {
+  background: #fff;
+  padding: 24px;
+  min-height: 400px;
 }
 
-nz-divider {
-  color: dimgrey;
-}
-.inner-box {
-  background: #0092ff;
-  padding: 8px 0;
+/* 设置分页在content布局的右下角*/
+nz-pagination {
+
 }

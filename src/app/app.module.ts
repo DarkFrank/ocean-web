@@ -16,12 +16,15 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzBackTopModule } from 'ng-zorro-antd/back-top';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import {NgZorroAntdModule} from 'ng-zorro-antd';
+import {DetailComponent} from './ppt/detail/detail.component';
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ registerLocaleData(en);
     NzCardModule,
     NzBackTopModule,
     NzDividerModule,
-    NzGridModule
+    NzGridModule,
+    NgZorroAntdModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
