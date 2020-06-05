@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  resourceURL = 'http://192.168.139.162/';
+  resourceURL = 'http://192.168.139.163/';
   appURL = 'http://localhost:4200/app/detail/';
   title = 'ocean-web';
    navigationBarList = [
@@ -123,6 +123,6 @@ export class AppComponent {
 
   /*新页签展示详情页*/
   openDetailPage(url: string) {
-    window.open(url);
+    window.open('#/powerpoint-detail');
   }
 }

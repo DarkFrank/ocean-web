@@ -18,6 +18,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import {NgZorroAntdModule} from 'ng-zorro-antd';
 import {DetailComponent} from './ppt/detail/detail.component';
+import {Routes} from '@angular/router';
 
 registerLocaleData(en);
 
@@ -43,3 +44,10 @@ registerLocaleData(en);
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+const routes: Routes = [
+  {
+    path: 'powerpoint-detail',
+    component: DetailComponent
+  }
+];
