@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class AppComponent {
+export class HomeComponent {
   resourceURL = 'http://www.ypppt.com/uploads/allimg/200611/';
   appURL = 'http://localhost:4200/app/detail/';
   title = 'ocean-web';
@@ -107,7 +108,7 @@ export class AppComponent {
     , showBackground: false
   };
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   menuSelected() {
@@ -127,7 +128,7 @@ export class AppComponent {
 
   /*新页签展示详情页*/
   openDetailPage(url: string) {
-    window.open('#/powerpoint-detail');
-    // this.router.navigateByUrl('/powerpoint-detail');
+    // window.open('#/powerpoint-detail');
+    this.router.navigateByUrl('/detail');
   }
 }

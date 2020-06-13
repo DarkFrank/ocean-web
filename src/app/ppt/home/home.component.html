@@ -1,0 +1,18 @@
+
+    <div class="inner-content">
+      <!-- 资源展示区域 -->
+      <div nz-row nzJustify="center" style="width: 100%;margin:0 auto;">
+        <div nz-col [nzSpan]="4" style="padding:10px" *ngFor="let resource of pageList">
+          <div class="grid-config">
+            <nz-card nzHoverable style="width:200px" [nzCover]="picture">
+              <nz-card-meta nzTitle="{{resource.name}}" nzDescription={{resource.description}}></nz-card-meta>
+            </nz-card>
+            <ng-template #picture>
+              <img alt="example" src="{{resourceURL}}{{resource.name}}" (click)=openDetailPage(resource.id) />
+            </ng-template>
+          </div>
+        </div>
+      </div>
+      <!-- 分页组件 -->
+      <nz-pagination [nzTotal]="500" nzShowSizeChanger align="center" style="margin-top: 20px;"></nz-pagination>
+    </div>
