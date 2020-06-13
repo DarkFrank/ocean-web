@@ -1,1 +1,5 @@
-<span>hello world!</span>
+<nz-carousel nzAutoPlay>
+  <div nz-carousel-content *ngFor="let index of array">
+    <img alt="example" src="{{resourceURL}}{{resource.name}}" />
+  </div>
+</nz-carousel>
