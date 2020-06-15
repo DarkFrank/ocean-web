@@ -1,16 +1,24 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {PowerPointService} from '../../../service/PowerPointService';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
+  constructor(private router: Router, private http: HttpClient, private powerPointService: PowerPointService) {
+  }
+
+  pageNo = 1; // 页码
+  resourceList = []; // 资源数组
   resourceURL = 'http://www.ypppt.com/uploads/allimg/200611/';
   appURL = 'http://localhost:4200/app/detail/';
   title = 'ocean-web';
-   navigationBarList = [
+  navigationBarList = [
     'PPT模板'
     , 'PPT背景'
     , 'PPT图表'
@@ -20,12 +28,12 @@ export class HomeComponent {
     , 'PPT字体库'
   ];
   footerNavBar = [
-    '关于我们' ,
-    '版权声明' ,
-    '意见建议' ,
-    '联系方式' ,
-    '友链申请' ,
-    '网站地图' ,
+    '关于我们',
+    '版权声明',
+    '意见建议',
+    '联系方式',
+    '友链申请',
+    '网站地图',
   ];
 
   pageList = [
@@ -108,8 +116,6 @@ export class HomeComponent {
     , showBackground: false
   };
 
-  constructor(private router: Router) {
-  }
 
   menuSelected() {
     console.log('selected');
@@ -129,6 +135,20 @@ export class HomeComponent {
   /*新页签展示详情页*/
   openDetailPage(url: string) {
     // window.open('#/powerpoint-detail');
-    this.router.navigateByUrl('/detail');
+    window.open('/detail');
+    // this.router.navigateByUrl('/detail');
+  }
+
+  ngOnInit(): void {
+    // 查询模板数据信息
+    this.queryResources('pptTemplate');
+  }
+
+  private queryResources(resourceType: string) {
+    this.powerPointService.queryPPT(resourceType, this.pageNo).subscribe(response => {
+      // 赋值
+      this.resourceList = response.data; // 列表全部数据
+
+    });
   }
 }

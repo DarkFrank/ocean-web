@@ -27,14 +27,3 @@ nz-content {
 nz-footer {
   text-align: center;
 }
-
-.inner-content {
-  background: #fff;
-  padding: 24px;
-  min-height: 400px;
-}
-
-/* 设置分页在content布局的右下角*/
-nz-pagination {
-
-}

@@ -1,5 +1,19 @@
-<nz-carousel nzAutoPlay>
-  <div nz-carousel-content *ngFor="let index of array">
-    <img alt="example" src="{{resourceURL}}{{resource.name}}" />
+<div nz-row>
+  <div nz-col [nzSpan]="16">
+    <nz-carousel nzAutoPlay>
+      <div nz-carousel-content *ngFor="let index of array">
+        <img alt="example" src="{{resourceURL}}{{resource.name}}"/>
+      </div>
+    </nz-carousel>
   </div>
-</nz-carousel>
+  <div nz-col [nzSpan]="8">
+    <div id="detail-info">
+      <div nz-row>
+        <span>效果：1234</span>
+      </div>
+      <div nz-row>
+        <span>比例：1234</span>
+      </div>
+    </div>
+  </div>
+</div>
