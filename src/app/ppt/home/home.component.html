@@ -14,5 +14,6 @@
         </div>
       </div>
       <!-- 分页组件 -->
-      <nz-pagination [nzPageIndex]="1" [nzTotal]="500"></nz-pagination>
+      <nz-pagination [(nzPageIndex)]="pageIndex" [(nzPageSize)]="pageSize" [nzTotal]="totalCount"
+                     (nzPageIndexChange)="searchData()"></nz-pagination>
     </div>
