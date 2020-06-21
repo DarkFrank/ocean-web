@@ -1,14 +1,15 @@
 
     <div class="inner-content">
       <!-- 资源展示区域 -->
-      <div nz-row nzJustify="center" style="width: 90%; margin: 0 auto">
+      <div nz-row nzJustify="center" style="width: 1140px;margin: 0 auto;">
         <div nz-col [nzSpan]="6" *ngFor="let resource of pageList">
           <div class="grid-config">
-            <nz-card nzHoverable style="width:240px; margin-bottom: 10px" [nzCover]="picture">
-              <nz-card-meta nzTitle="{{resource.name}}" nzDescription={{resource.description}}></nz-card-meta>
+            <nz-card nzHoverable style="width:260px; margin-bottom: 10px" [nzCover]="picture">
+              <nz-card-meta nzTitle="{{resource.name}}" nzDescription="{{resource.effect}}-{{resource.pageNum}}页"></nz-card-meta>
             </nz-card>
             <ng-template #picture>
-              <img alt="example" src="{{resourceURL}}{{resource.name}}" (click)=openDetailPage(resource.id) />
+              <img alt="example" src="{{resourceURL}}{{resource.id}}/{{resource.thumbnailName}}" (click)=openDetailPage(resource.id) />
+              <!--<img alt="example" [routerLink]="['/detail']" src="{{resourceURL}}{{resource.id}}/{{resource.thumbnailName}}" (click)=openDetailPage(resource.id) />-->
             </ng-template>
           </div>
         </div>

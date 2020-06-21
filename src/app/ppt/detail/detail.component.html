@@ -1,8 +1,8 @@
 <div nz-row>
   <div nz-col [nzSpan]="16">
     <nz-carousel nzAutoPlay>
-      <div nz-carousel-content *ngFor="let index of array">
-        <img alt="example" src="{{resourceURL}}{{resource.name}}"/>
+      <div nz-carousel-content *ngFor="let picture of previewPictures">
+        <img alt="example" src="{{resourceURL}}{{powerpointId}}/{{picture.location}}"/>
       </div>
     </nz-carousel>
   </div>

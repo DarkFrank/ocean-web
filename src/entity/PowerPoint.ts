@@ -9,6 +9,7 @@ export class PowerPoint {
   fileSize: string;
   effect: string;
   description: string;
+  thumbnailName: string;
   createTime: Date;
   updateTIme: Date;
 }

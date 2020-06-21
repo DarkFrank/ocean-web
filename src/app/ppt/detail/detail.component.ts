@@ -1,5 +1,7 @@
-import {Component} from '@angular/core';
-import { NzGridModule } from 'ng-zorro-antd/grid';
+import {Component, Input, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
+import {PowerPointService} from '../../../service/PowerPointService';
 
 @Component({
   selector: 'app-detail-component',
@@ -7,20 +9,20 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
   styleUrls: ['./detail.component.css']
 })
 
-export class DetailComponent {
+export class DetailComponent implements OnInit{
 
-  array = [1, 2, 3, 4];
-  resource = {
-    id: '1-200530122201-50.jpg',
-    name: '1-200611100643.jpg',
-    classification: '自我介绍',
-    showRatio: '16:9',
-    fileFormat: 'PPTX',
-    downloadTimes: '10',
-    pageNum: '2',
-    fileSize: '3.6M',
-    effect: '动态',
-    description: 'description'
-  };
-  resourceURL = 'http://www.ypppt.com/uploads/allimg/200611/';
+  powerpointId = '7680633d-2d9f-4dc7-849a-478a25998160';
+  resourceURL = 'http://123.56.128.130/ocean/images/'; // 缩略图地址
+  previewPictures = [];
+  constructor(private router: Router,
+              private http: HttpClient,
+              private powerPointService: PowerPointService) {
+  }
+  ngOnInit(): void {
+    this.powerPointService.getImagesByPowerpointId(this.powerpointId).subscribe(
+      (result: any) => {
+        this.previewPictures = result;
+      }
+    );
+  }
 }

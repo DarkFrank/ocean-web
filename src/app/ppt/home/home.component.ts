@@ -12,11 +12,11 @@ export class HomeComponent implements OnInit {
 
     pageNo = 1; // 页码
     pageIndex = 1;
-    pageSize = 6; // 每页显示条数
+    pageSize = 20; // 每页显示条数
     totalCount = 0; // 页面总数
     resourceList = []; // 资源数组
-    resourceURL = 'http://www.ypppt.com/uploads/allimg/200611/';
-    appURL = 'http://localhost:4200/app/detail/';
+    resourceURL = 'http://123.56.128.130/ocean/images/'; // 缩略图地址
+    appURL = 'http://127.0.0.1:4200/app/detail/';
     title = 'ocean-web';
     navigationBarList = [
         'PPT模板'
@@ -42,81 +42,6 @@ export class HomeComponent implements OnInit {
         , showBackground: false
     };
 
-    // pageList = [
-    //   {
-    //     id: '1-200530122201-50.jpg',
-    //     name: '1-200611100643.jpg',
-    //     classification: '自我介绍',
-    //     showRatio: '16:9',
-    //     fileFormat: 'PPTX',
-    //     downloadTimes: '10',
-    //     pageNum: '2',
-    //     fileSize: '3.6M',
-    //     effect: '动态',
-    //     description: 'description'
-    //   },
-    //   {
-    //     id: '1-200530122201-50.jpg',
-    //     name: '1-200611100643.jpg',
-    //     classification: '自我介绍',
-    //     showRatio: '16:9',
-    //     fileFormat: 'PPTX',
-    //     downloadTimes: '10',
-    //     pageNum: '2',
-    //     fileSize: '3.6M',
-    //     effect: '动态',
-    //     description: 'description'
-    //   },
-    //   {
-    //     id: '1-200530122201-50.jpg',
-    //     name: '1-200611100643.jpg',
-    //     classification: '自我介绍',
-    //     showRatio: '16:9',
-    //     fileFormat: 'PPTX',
-    //     downloadTimes: '10',
-    //     pageNum: '2',
-    //     fileSize: '3.6M',
-    //     effect: '动态',
-    //     description: 'description'
-    //   },
-    //   {
-    //     id: '1-200530122201-50.jpg',
-    //     name: '1-200611100643.jpg',
-    //     classification: '自我介绍',
-    //     showRatio: '16:9',
-    //     fileFormat: 'PPTX',
-    //     downloadTimes: '10',
-    //     pageNum: '2',
-    //     fileSize: '3.6M',
-    //     effect: '动态',
-    //     description: 'description'
-    //   },
-    //   {
-    //     id: '1-200530122201-50.jpg',
-    //     name: '1-200611100643.jpg',
-    //     classification: '自我介绍',
-    //     showRatio: '16:9',
-    //     fileFormat: 'PPTX',
-    //     downloadTimes: '10',
-    //     pageNum: '2',
-    //     fileSize: '3.6M',
-    //     effect: '动态',
-    //     description: 'description'
-    //   },
-    //   {
-    //     id: '1-200530122201-50.jpg',
-    //     name: '1-200611100643.jpg',
-    //     classification: '自我介绍',
-    //     showRatio: '16:9',
-    //     fileFormat: 'PPTX',
-    //     downloadTimes: '10',
-    //     pageNum: '2',
-    //     fileSize: '3.6M',
-    //     effect: '动态',
-    //     description: 'description'
-    //   }
-    // ];
-
     constructor(private router: Router,
                 private http: HttpClient,
                 private powerPointService: PowerPointService) {
@@ -138,10 +63,11 @@ export class HomeComponent implements OnInit {
     }
 
     /*新页签展示详情页*/
-    openDetailPage(url: string) {
-        // window.open('#/powerpoint-detail');
+    openDetailPage(powerpointId: string) {
+        // 新标签页打开
         window.open('/detail');
-        // this.router.navigateByUrl('/detail');
+        // 当前页跳转
+        // this.router.navigate(['/detail/'], {queryParams: {id: powerpointId}});
     }
 
     ngOnInit(): void {
@@ -163,12 +89,5 @@ export class HomeComponent implements OnInit {
             }
         );
     }
-
-    // private queryResources(resourceType: string) {
-    //     this.powerPointService.queryPPT(resourceType, this.pageNo).subscribe(response => {
-    //         // 赋值
-    //         this.resourceList = response.data; // 列表全部数据
-    //     });
-    // }
 
 }
