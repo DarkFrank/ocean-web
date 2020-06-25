@@ -25,9 +25,16 @@
             ],
             "styles": [
               "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/slide3D/slide3D.css",
+              "src/assets/slide3D/slide3D-1.2.1.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/slide3D/slide3D.js",
+              "src/assets/slide3D/slide3D.min.js",
+              "src/assets/slide3D/slide3D-1.2.1.js",
+              "src/assets/slide3D/slide3D-1.2.1.min.js"
+            ]
           },
           "configurations": {
             "production": {

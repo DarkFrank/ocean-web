@@ -18,20 +18,33 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import {NgZorroAntdModule} from 'ng-zorro-antd';
 import {DetailComponent} from './ppt/detail/detail.component';
-import {Routes} from '@angular/router';
+import {Router, RouterModule, Routes} from '@angular/router';
+import {HomeComponent} from './ppt/home/home.component';
 
 registerLocaleData(en);
 
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'detail',
+    component: DetailComponent
+  }
+];
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    DetailComponent
-  ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot(routes),
     NzLayoutModule,
     NzPaginationModule,
     NzCardModule,
@@ -40,14 +53,15 @@ registerLocaleData(en);
     NzGridModule,
     NgZorroAntdModule
   ],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    DetailComponent
+  ],
+  exports: [
+    RouterModule
+  ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-const routes: Routes = [
-  {
-    path: 'powerpoint-detail',
-    component: DetailComponent
-  }
-];

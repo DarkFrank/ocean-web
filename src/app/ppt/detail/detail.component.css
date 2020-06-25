@@ -1,0 +1,8 @@
+[nz-carousel-content] {
+  width: 900px;
+  height: 600px;
+  /*line-height: 160px;*/
+  background: #364d79;
+  color: #fff;
+  overflow: hidden;
+}
