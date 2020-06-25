@@ -1,8 +1,14 @@
 [nz-carousel-content] {
   width: 900px;
-  height: 600px;
-  /*line-height: 160px;*/
+  height: 376px;
+  line-height: 160px;
   background: #364d79;
   color: #fff;
   overflow: hidden;
+}
+
+.inner-content {
+  background: #fff;
+  padding: 24px;
+  min-height: 750px;
 }
