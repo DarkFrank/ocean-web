@@ -2,8 +2,8 @@
   <nz-header>
     <div class="logo"></div>
     <ul nz-menu nzTheme="dark" nzMode="horizontal" [nzSelectable]="true">
-      <li nz-menu-item (click)="showHandler('template')">PPT模板</li>
-      <li nz-menu-item (click)="showHandler('background')">PPT背景</li>
+      <li nz-menu-item [routerLink]="['../home']" [queryParams]="{source: 'template'}">PPT模板</li>
+      <li nz-menu-item [routerLink]="['../home']" [queryParams]="{source: 'background'}">PPT背景</li>
     </ul>
   </nz-header>
   <nz-content>
