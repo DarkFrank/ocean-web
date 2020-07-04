@@ -75,10 +75,10 @@ export class HomeComponent implements OnInit {
 
   /*新页签展示详情页*/
   openDetailPage(powerpointId: string) {
-      // 新标签页打开
-      window.open('/detail');
-      // 当前页跳转
-      // this.router.navigate(['/detail/'], {queryParams: {id: powerpointId}});
+    // 新标签页打开
+    window.open('/detail?powerpointId=' + powerpointId);
+    // 当前页跳转
+    // this.router.navigateByUrl('/detail?powerpointId=' + powerpointId);
   }
 
   searchData() {

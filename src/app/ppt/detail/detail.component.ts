@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {PowerPointService} from '../../../service/PowerPointService';
 
@@ -11,18 +11,22 @@ import {PowerPointService} from '../../../service/PowerPointService';
 
 export class DetailComponent implements OnInit{
 
-  powerpointId = '7680633d-2d9f-4dc7-849a-478a25998160';
+  powerpointId = '';
   resourceURL = 'http://123.56.128.130/ocean/images/'; // 缩略图地址
   previewPictures = [];
-  constructor(private router: Router,
+  constructor(private route: ActivatedRoute,
               private http: HttpClient,
               private powerPointService: PowerPointService) {
   }
   ngOnInit(): void {
+    this.route.queryParams.subscribe((data) => {
+      this.powerpointId = data.powerpointId;
+    });
     this.powerPointService.getImagesByPowerpointId(this.powerpointId).subscribe(
       (result: any) => {
         this.previewPictures = result;
       }
     );
   }
+
 }
