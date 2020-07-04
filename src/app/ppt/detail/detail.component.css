@@ -1,3 +1,8 @@
+.ant-carousel {
+  height: 376px!important;
+  width: 668px!important;
+}
+
 [nz-carousel-content] {
   width: 900px;
   height: 376px;

@@ -1,12 +1,12 @@
 <div class="inner-content">
-  <div nz-col [nzSpan]="14">
-    <nz-carousel nzAutoPlay style="width: 668px; float: right;padding-right: 20px;">
+  <div style="display: inline-block;">
+    <nz-carousel nzAutoPlay style="float: right;padding-right: 20px;">
       <div nz-carousel-content *ngFor="let picture of previewPictures">
         <img alt="example" src="{{resourceURL}}{{powerpointId}}/{{picture.location}}"/>
       </div>
     </nz-carousel>
   </div>
-  <div nz-col [nzSpan]="10">
+  <div style="display: inline-block;">
     <div id="detail-info">
       <div nz-row>
         <span>效果：1234</span>
