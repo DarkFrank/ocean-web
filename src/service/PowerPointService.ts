@@ -22,4 +22,7 @@ export class PowerPointService {
     return this.http.get(this.domain + '/ocean/v1/powerpoints/' + id + '/preview-pictures');
   }
 
+  getPowerPointById(powerpointId: string) {
+    return this.http.get(this.domain + '/ocean/v1/powerpoints/' + powerpointId);
+  }
 }

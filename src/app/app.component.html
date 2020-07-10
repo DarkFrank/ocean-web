@@ -7,12 +7,20 @@
     </ul>
   </nz-header>
   <nz-content>
-    <nz-breadcrumb>
+    <!--<nz-breadcrumb>
       <nz-breadcrumb-item>Home</nz-breadcrumb-item>
       <nz-breadcrumb-item>List</nz-breadcrumb-item>
       <nz-breadcrumb-item>App</nz-breadcrumb-item>
-    </nz-breadcrumb>
+    </nz-breadcrumb>-->
     <router-outlet></router-outlet>
   </nz-content>
-  <nz-footer>Copyright © 2020 ypppt.com All Rights Reserved.</nz-footer>
+  <nz-divider style="color: red"></nz-divider>
+  <nz-footer nz-menu nzTheme="dark">
+    <div>
+      <!--<span *ngFor="let bar of footerNavBar" style="margin-right: 20px">{{bar}}</span>-->
+      <a *ngFor="let bar of footerNavBar" style="margin-right: 20px;display: inline; text-decoration: none;color: #a6adb4" (click)="showPromptPage(bar)">{{bar}}</a>
+    </div>
+    <div>Copyright © 2020 9ishare.top All Rights Reserved.</div>
+    <nz-back-top></nz-back-top>
+  </nz-footer>
 </nz-layout>

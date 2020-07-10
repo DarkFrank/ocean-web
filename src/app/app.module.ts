@@ -16,10 +16,11 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzBackTopModule } from 'ng-zorro-antd/back-top';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzGridModule } from 'ng-zorro-antd/grid';
-import {NgZorroAntdModule} from 'ng-zorro-antd';
+import {NgZorroAntdModule, NzAnchorModule, NzMenuModule} from 'ng-zorro-antd';
 import {DetailComponent} from './ppt/detail/detail.component';
 import {Router, RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './ppt/home/home.component';
+import {FooterComponent} from './ppt/footer/footer.component';
 
 registerLocaleData(en);
 
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'detail',
     component: DetailComponent
+  },
+  {
+    path: 'prompt',
+    component: FooterComponent
   }
 ];
 
@@ -51,12 +56,15 @@ const routes: Routes = [
     NzBackTopModule,
     NzDividerModule,
     NzGridModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    NzMenuModule,
+    NzAnchorModule,
   ],
   declarations: [
     AppComponent,
     HomeComponent,
-    DetailComponent
+    DetailComponent,
+    FooterComponent
   ],
   exports: [
     RouterModule

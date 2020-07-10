@@ -1,0 +1,8 @@
+[nz-menu] {
+  width: 240px;
+}
+.inner-content {
+  background: #fff;
+  padding: 24px;
+  min-height: 750px;
+}

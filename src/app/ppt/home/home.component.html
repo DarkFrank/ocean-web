@@ -1,6 +1,6 @@
-<div class="inner-content">
+<!--<div class="inner-content">-->
   <!-- 资源展示区域 -->
-  <div nz-row nzJustify="center" style="width: 1140px;margin: 0 auto;">
+  <div nz-row nzJustify="center" style="width: 1140px;margin: 10px auto;">
     <div nz-col [nzSpan]="6" *ngFor="let resource of pageList">
       <div class="grid-config">
         <nz-card nzHoverable style="width:260px; margin-bottom: 10px" [nzCover]="picture">
@@ -16,4 +16,4 @@
   <!-- 分页组件 -->
   <nz-pagination [(nzPageIndex)]="pageIndex" [(nzPageSize)]="pageSize" [nzTotal]="totalCount"
                  (nzPageIndexChange)="searchData()"></nz-pagination>
-</div>
+<!--</div>-->
