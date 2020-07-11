@@ -1,12 +1,40 @@
-<div style="margin: 0 auto;text-align: center; margin-top: 10px;min-height: 720px">
-  <div>
+<div id="page" style="margin: 0 auto;text-align: center; margin-top: 10px;min-height: 720px">
+  <div style="display: inline;float: left">
     <ul nz-menu [nzMode]="mode ? 'vertical' : 'inline'" style="background-color: rgb(240,242,245)">
-      <li nz-menu-item>关于我们</li>
-      <li nz-menu-item>版权声明</li>
-      <li nz-menu-item>意见建议</li>
-      <li nz-menu-item>联系方式</li>
-      <li nz-menu-item>友链申请</li>
-      <li nz-menu-item>网站地图</li>
+      <li nz-menu-item (click)="transferContent('关于我们')" [nzSelected]="barName==='关于我们'">关于我们</li>
+      <li nz-menu-item (click)="transferContent('版权声明')" [nzSelected]="barName==='版权声明'">版权声明</li>
+      <li nz-menu-item (click)="transferContent('意见建议')" [nzSelected]="barName==='意见建议'">意见建议</li>
+      <li nz-menu-item (click)="transferContent('联系方式')" [nzSelected]="barName==='联系方式'">联系方式</li>
+      <li nz-menu-item (click)="transferContent('友链申请')" [nzSelected]="barName==='友链申请'">友链申请</li>
+      <li nz-menu-item (click)="transferContent('网站地图')" [nzSelected]="barName==='网站地图'">网站地图</li>
     </ul>
+  </div>
+  <div style="float: left;margin: 20px auto;text-align: left;padding-left: 10%">
+    <div *ngIf="barName==='关于我们'">
+      <p>欢迎来到9i share网站！</p>
+      <p>正如网站的名称一样，我们坚持以“海纳百川，有容乃大”为原则，搜集有价值的网络资源，免费开放给有需要的人。</p>
+      <p>秉承互联网“免费共享”的精神，本站所有资源完全免费，免注册，一切以用户体验为重，让你轻松愉快的获得您想要的资源。</p>
+      <p>我们目前只整合了PPT相关专栏，后续还会持续进行不定期更新。</p>
+      <p>感谢朋友们的支持与关注，9i share有你而精彩，我们愿与你一起成长，一起变得更加优秀！</p>
+    </div>
+    <div *ngIf="barName==='版权声明'">
+      <p>本站所有PPT资源来源于互联网，仅供学习研究使用，版权归作者所有，请勿用于商业用途。</p>
+      <p>如果因为您将本站资源用于其他用途而引起的纠纷，本站不负任何责任。</p>
+      <p>如果本站内容无意中侵犯了您的版权，请联系告知，我们会及时处理。</p>
+    </div>
+    <div *ngIf="barName==='意见建议'">
+      <p>QQ：209901527</p>
+      <p>邮箱：209901527#qq.com（请将“#”替换为“@”）</p>
+    </div>
+    <div *ngIf="barName==='联系方式'">
+      <p>如果你有新建议？如果内容无法下载？没有想要的资源？</p>
+      <p>欢迎留言给我们！</p>
+    </div>
+    <div *ngIf="barName==='友链申请'">
+      5
+    </div>
+    <div *ngIf="barName==='网站地图'">
+      6
+    </div>
   </div>
 </div>
