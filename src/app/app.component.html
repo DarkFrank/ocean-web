@@ -16,13 +16,15 @@
     </nz-breadcrumb>-->
     <router-outlet></router-outlet>
   </nz-content>
-  <nz-divider style="color: red"></nz-divider>
-  <nz-footer nz-menu nzTheme="dark">
+  <br/>
+
+  <nz-footer nz-menu nzTheme="dark" style="line-height: 50px">
     <div>
       <!--<span *ngFor="let bar of footerNavBar" style="margin-right: 20px">{{bar}}</span>-->
       <a *ngFor="let bar of footerNavBar" style="margin-right: 20px;display: inline; text-decoration: none;color: #a6adb4" (click)="showPromptPage(bar)">{{bar}}</a>
+      <br/>
+      <span>Copyright © 2020 9ishare.top All Rights Reserved.</span>
     </div>
-    <div>Copyright © 2020 9ishare.top All Rights Reserved.</div>
     <nz-back-top></nz-back-top>
   </nz-footer>
 </nz-layout>

@@ -3,11 +3,11 @@
   <div style="display: inline-block;">
     <nz-carousel nzAutoPlay style="float: left;">
       <div nz-carousel-content *ngFor="let picture of previewPictures" style="border: 1px solid lightgray">
-        <img alt="example" src="{{resourceURL}}{{powerpointId}}/{{picture.location}}"/>
+        <img alt="example" src="{{resourceURL}}/images/{{powerpointId}}/{{picture.location}}"/>
       </div>
     </nz-carousel>
   </div>
-  <div style="display: inline-block;width: 300px;margin-left: 30px;text-align: left;position: relative;top: -190px;">
+  <div style="display: inline-block;width: 300px;margin-left: 30px;text-align: left;position: relative;top: -30px;">
     <nz-divider nzText="{{powerPoint.name}}" nzOrientation="left"></nz-divider>
     <div nz-row class="detail-info">
       <div nz-col nzSpan="12">
@@ -45,6 +45,12 @@
       <div>
         <span>描述：{{powerPoint.description}}</span>
       </div>
+    </div>
+    <div nz-row class="detail-info" nzSpan="24" style="padding-left: 30%">
+      <button nz-button nzType="primary" (click)="downloadPowerPoint(powerPoint.id)">下载资源</button>
+      <!--<span style="background-color: rgb(18,150,219);padding: 10px 20px" >
+        <a href="{{resourceURL}}/template/{{powerPoint.id}}.zip" style="color: white">下载资源</a>
+      </span>-->
     </div>
   </div>
 </div>

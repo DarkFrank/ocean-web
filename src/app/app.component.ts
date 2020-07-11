@@ -30,6 +30,8 @@ export class AppComponent {
   }
 
   showPromptPage(bar: string) {
+    // 展示提示栏位信息
     this.router.navigateByUrl('/prompt?bar_name=' + bar);
+    // 跳转到顶部
   }
 }

@@ -13,7 +13,7 @@ import {PowerPoint} from '../../../entity/PowerPoint';
 export class DetailComponent implements OnInit{
 
   powerpointId = '';
-  resourceURL = 'http://123.56.128.130/ocean/images/'; // 缩略图地址
+  resourceURL = 'http://123.56.128.130/ocean'; // 缩略图地址
   previewPictures = [];
   powerPoint: PowerPoint;
   constructor(private route: ActivatedRoute,
@@ -36,4 +36,16 @@ export class DetailComponent implements OnInit{
     );
   }
 
+  downloadPowerPoint(id: string) {
+    // Call api to update download times.
+    this.powerPointService.addDownloadTimesById(id).subscribe();
+    // download times add one time.
+    this.powerPoint.downloadTimes += 1;
+    // Download resource.
+    const a = document.createElement('a');
+    a.setAttribute('style', 'display:none');
+    a.setAttribute('href', this.resourceURL + '/template/' +　id + '.zip');
+    a.setAttribute('download', this.powerPoint.name);
+    a.click();
+  }
 }

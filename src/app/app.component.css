@@ -25,16 +25,3 @@ nz-content {
 nz-footer {
   text-align: center;
 }
-
-.foot {
-  position: absolute;
-  bottom: 0;
-  height: 50px;
-  width: 100%;
-  background: #fff;
-  border-top: 1px solid #e8ebed;
-  color: #999;
-  font-size: 14px;
-  text-align: center;
-  line-height: 50px;
-}
