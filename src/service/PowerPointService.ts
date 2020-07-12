@@ -4,8 +4,8 @@ import {HttpClient} from '@angular/common/http';
 @Injectable({providedIn: 'root'})
 export class PowerPointService {
 
-  // domain = 'http://localhost:8080';
-  domain = 'http://123.56.128.130:8080';
+  domain = 'http://localhost:8080';
+  // domain = 'http://123.56.128.130:8080';
 
   constructor(private http: HttpClient) {
   }
@@ -28,5 +28,13 @@ export class PowerPointService {
 
   addDownloadTimesById(id) {
     return this.http.patch(this.domain + '/ocean/v1/powerpoints/' + id + '/add-download-times', null);
+  }
+
+  getClassifications() {
+    return this.http.get(this.domain + '/ocean/v1/powerpoints/classifications');
+  }
+
+  queryPowerpointByType(type: any) {
+    return this.http.get(this.domain + '/ocean/v1/powerpoints/1/20?classification=' + type).pipe();
   }
 }

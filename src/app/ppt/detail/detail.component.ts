@@ -44,7 +44,7 @@ export class DetailComponent implements OnInit{
     // Download resource.
     const a = document.createElement('a');
     a.setAttribute('style', 'display:none');
-    a.setAttribute('href', this.resourceURL + '/template/' +　id + '.zip');
+    a.setAttribute('href', this.resourceURL + '/template/' +　id + '.' + this.powerPoint.resourceFormat);
     a.setAttribute('download', this.powerPoint.name);
     a.click();
   }

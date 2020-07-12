@@ -10,6 +10,7 @@ export class PowerPoint {
   effect: string;
   description: string;
   thumbnailName: string;
+  resourceFormat: string;
   createTime: Date;
   updateTIme: Date;
 }

@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   totalCount = 0; // 页面总数
   resourceList = []; // 资源数组
   resourceURL = 'http://123.56.128.130/ocean/images/'; // 缩略图地址
+  classifications = [];
   appURL = 'http://127.0.0.1:4200/app/detail/';
   title = 'ocean-web';
   navigationBarList = [
@@ -56,6 +57,12 @@ export class HomeComponent implements OnInit {
       this.source = data.source;
       this.getPPT(this.pageIndex, this.pageSize);
     });
+    // 查询模板分类信息
+    this.powerPointService.getClassifications().subscribe(
+      (result: any) => {
+        this.classifications = result;
+      }
+    );
   }
 
   menuSelected() {
@@ -95,4 +102,12 @@ export class HomeComponent implements OnInit {
       );
   }
 
+  queryPowerpointByType(type: any) {
+    this.powerPointService.queryPowerpointByType(type).subscribe(
+      (result: any) => {
+        this.pageList = result.content;
+        this.totalCount = result.totalElements;
+      }
+    );
+  }
 }

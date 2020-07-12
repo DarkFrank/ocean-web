@@ -1,6 +1,19 @@
 <!--<div class="inner-content">-->
+  <!-- 模板信息统计区域 -->
+<div style="width: 1140px;margin: 20px auto;">
+  <div style="padding: 20px;background-color: white">
+    <!--<nz-divider nzText="模板分类" nzOrientation="left"></nz-divider>-->
+    <h3>模板分类</h3>
+    <div>
+      <nz-row>
+        <nz-col nzSpan="2" *ngFor="let type of classifications" style="text-align: left;padding-top: 3px;" (click)="queryPowerpointByType(type)">
+          <a style="text-decoration: none;color: gray">{{type}}</a>
+        </nz-col>
+      </nz-row>
+    </div>
+  </div>
   <!-- 资源展示区域 -->
-  <div nz-row nzJustify="center" style="width: 1140px;margin: 10px auto;">
+  <div nz-row nzJustify="center" style="margin-top: 20px">
     <div nz-col [nzSpan]="6" *ngFor="let resource of pageList">
       <div class="grid-config">
         <nz-card nzHoverable style="width:260px; margin-bottom: 10px" [nzCover]="picture">
@@ -16,4 +29,5 @@
   <!-- 分页组件 -->
   <nz-pagination [(nzPageIndex)]="pageIndex" [(nzPageSize)]="pageSize" [nzTotal]="totalCount"
                  (nzPageIndexChange)="searchData()"></nz-pagination>
+</div>
 <!--</div>-->
