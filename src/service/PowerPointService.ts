@@ -14,8 +14,8 @@ export class PowerPointService {
     return null;
   }
 
-  getPPT(pageNo, pageSize) {
-    return this.http.get(this.domain + '/ocean/v1/powerpoints/' + pageNo + '/' + pageSize).pipe();
+  getPPT(pageNo, pageSize, classification) {
+    return this.http.get(this.domain + '/ocean/v1/powerpoints/' + pageNo + '/' + pageSize + "?classification=" + classification).pipe();
   }
 
   getImagesByPowerpointId(id){
