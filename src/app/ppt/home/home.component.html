@@ -6,7 +6,7 @@
     <h3>模板分类</h3>
     <div>
       <nz-row>
-        <nz-col nzSpan="2" *ngFor="let type of classifications" style="text-align: left;padding-top: 3px;" (click)="searchData(type)">
+        <nz-col nzSpan="2" *ngFor="let type of classifications" style="text-align: left;padding-top: 3px;" (click)=searchData(type)>
           <a style="text-decoration: none;color: gray">{{type}}</a>
         </nz-col>
       </nz-row>
@@ -28,6 +28,6 @@
   </div>
   <!-- 分页组件 -->
   <nz-pagination [(nzPageIndex)]="pageIndex" [(nzPageSize)]="pageSize" [nzTotal]="totalCount"
-                 (nzPageIndexChange)="searchData('')"></nz-pagination>
+                 (nzPageIndexChange)="searchData(templateType)"></nz-pagination>
 </div>
 <!--</div>-->
