@@ -14,8 +14,8 @@ export class PowerPointService {
     return null;
   }
 
-  getPPT(pageNo, pageSize) {
-    return this.http.get(this.domain + '/ocean/v1/powerpoints/' + pageNo + '/' + pageSize).pipe();
+  getPPT(pageNo, pageSize, classification) {
+    return this.http.get(this.domain + '/ocean/v1/powerpoints/' + pageNo + '/' + pageSize + '?classification=' + classification).pipe();
   }
 
   getImagesByPowerpointId(id){
@@ -32,9 +32,5 @@ export class PowerPointService {
 
   getClassifications() {
     return this.http.get(this.domain + '/ocean/v1/powerpoints/classifications');
-  }
-
-  queryPowerpointByType(type: any) {
-    return this.http.get(this.domain + '/ocean/v1/powerpoints/1/20?classification=' + type).pipe();
   }
 }

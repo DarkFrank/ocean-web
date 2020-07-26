@@ -19,25 +19,8 @@ export class HomeComponent implements OnInit {
   resourceList = []; // 资源数组
   resourceURL = 'http://123.56.128.130/ocean/images/'; // 缩略图地址
   classifications = [];
-  appURL = 'http://127.0.0.1:4200/app/detail/';
-  title = 'ocean-web';
-  navigationBarList = [
-      'PPT模板'
-      , 'PPT背景'
-      , 'PPT图表'
-      , 'PPT素材'
-      , 'PPT教程'
-      , '节日PPT'
-      , 'PPT字体库'
-  ];
-  footerNavBar = [
-      '关于我们',
-      '版权声明',
-      '意见建议',
-      '联系方式',
-      '友链申请',
-      '网站地图'
-  ];
+  templateType = '';
+
   pageList: any = [];
   /*展示模块的控制变量*/
   showNavMap: {[name: string]: boolean} = {
@@ -55,7 +38,7 @@ export class HomeComponent implements OnInit {
     // 查询模板数据信息
     this.route.queryParams.subscribe((data) => {
       this.source = data.source;
-      this.getPPT(this.pageIndex, this.pageSize);
+      this.searchData(this.templateType);
     });
     // 查询模板分类信息
     this.powerPointService.getClassifications().subscribe(
@@ -88,22 +71,9 @@ export class HomeComponent implements OnInit {
     // this.router.navigateByUrl('/detail?powerpointId=' + powerpointId);
   }
 
-  searchData() {
-      this.getPPT(this.pageIndex, this.pageSize);
-  }
-
-
-  getPPT(pageIndex, pageSize) {
-      this.powerPointService.getPPT(this.pageIndex, this.pageSize).subscribe(
-          (result: any) => {
-              this.pageList = result.content;
-              this.totalCount = result.totalElements;
-          }
-      );
-  }
-
-  queryPowerpointByType(type: any) {
-    this.powerPointService.queryPowerpointByType(type).subscribe(
+  searchData(templateType: string) {
+    this.templateType = templateType;
+    this.powerPointService.getPPT(this.pageIndex, this.pageSize, templateType).subscribe(
       (result: any) => {
         this.pageList = result.content;
         this.totalCount = result.totalElements;
