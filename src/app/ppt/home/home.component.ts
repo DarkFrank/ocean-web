@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   pageSize = 20; // 每页显示条数
   totalCount = 0; // 页面总数
   resourceList = []; // 资源数组
-  resourceURL = 'http://123.56.128.130/ocean/images/'; // 缩略图地址
+  resourceURL = 'http://123.56.128.130:10220/ocean/images/'; // 缩略图地址
   classifications = [];
   templateType = '';
 
