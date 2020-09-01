@@ -1,0 +1,51 @@
+<!--<div class="inner-content">-->
+  <!-- 模板信息统计区域 -->
+<div style="width: 1140px;margin: 20px auto;">
+  <div style="padding: 20px;background-color: white">
+    <!--<nz-divider nzText="模板分类" nzOrientation="left"></nz-divider>-->
+    <h3>模板分类</h3>
+    <div>
+      <nz-row>
+        <nz-col nzSpan="2" *ngFor="let type of classifications" style="text-align: left;padding-top: 3px;" (click)=searchData(type)>
+          <a style="text-decoration: none;color: gray">{{type}}</a>
+        </nz-col>
+      </nz-row>
+    </div>
+  </div>
+  <!-- 资源展示区域 -->
+  <div nz-row nzJustify="center" style="margin-top: 20px">
+    <div nz-col [nzSpan]="6" *ngFor="let resource of pageList">
+      <div class="grid-config">
+        <nz-card nzHoverable style="width:260px; margin-bottom: 10px" [nzCover]="picture">
+          <nz-card-meta nzTitle="{{resource.name}}" nzDescription="{{resource.effect}}-{{resource.pageNum}}页"></nz-card-meta>
+        </nz-card>
+        <ng-template #picture>
+          <img alt="example" src="{{resourceURL}}{{resource.id}}/{{resource.thumbnailName}}" (click)=openDetailPage(resource.id) />
+          <!--<img alt="example" [routerLink]="['/detail']" src="{{resourceURL}}{{resource.id}}/{{resource.thumbnailName}}" (click)=openDetailPage(resource.id) />-->
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  <!-- 分页组件 -->
+  <nz-pagination [(nzPageIndex)]="pageIndex" [(nzPageSize)]="pageSize" [nzTotal]="totalCount"
+                 (nzPageIndexChange)="searchData(templateType)"></nz-pagination>
+
+  <div *ngIf="pageList === []">
+    <nz-alert nzBanner nzMessage="系统检测到您的访问存在异常，将对您的访问进行限制，如有问题请联系管理员。QQ：209901527"></nz-alert>
+    <div nz-row nzJustify="center" style="margin-top: 20px">
+      <div nz-col [nzSpan]="6" *ngFor="let resource of defaultPageList">
+        <div class="grid-config">
+          <nz-card nzHoverable style="width:260px; margin-bottom: 10px" [nzCover]="picture">
+            <nz-card-meta nzTitle="{{resource.name}}" nzDescription="{{resource.effect}}-{{resource.pageNum}}页"></nz-card-meta>
+          </nz-card>
+          <ng-template #picture>
+            <img alt="example" src="{{resourceURL}}{{resource.id}}/{{resource.thumbnailName}}" (click)=openDetailPage(resource.id) />
+            <!--<img alt="example" [routerLink]="['/detail']" src="{{resourceURL}}{{resource.id}}/{{resource.thumbnailName}}" (click)=openDetailPage(resource.id) />-->
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!--</div>-->

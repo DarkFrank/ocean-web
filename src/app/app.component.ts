@@ -8,6 +8,8 @@ import {Router} from '@angular/router';
 })
 export class AppComponent {
   title = 'ocean-web';
+  isVisible = false;
+  isConfirmLoading = false;
   navigationBarList = [
     'PPT模板'
     , 'PPT背景'
@@ -33,5 +35,21 @@ export class AppComponent {
     // 展示提示栏位信息
     this.router.navigateByUrl('/prompt?bar_name=' + bar);
     // 跳转到顶部
+  }
+
+  showModal(): void {
+    this.isVisible = true;
+  }
+
+  handleOk(): void {
+    this.isConfirmLoading = true;
+    setTimeout(() => {
+      this.isVisible = false;
+      this.isConfirmLoading = false;
+    }, 3000);
+  }
+
+  handleCancel(): void {
+    this.isVisible = false;
   }
 }

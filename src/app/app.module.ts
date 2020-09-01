@@ -21,6 +21,7 @@ import {DetailComponent} from './ppt/detail/detail.component';
 import {Router, RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './ppt/home/home.component';
 import {FooterComponent} from './ppt/footer/footer.component';
+import {LoginComponent} from './ppt/login/login.component';
 
 registerLocaleData(en);
 
@@ -62,6 +63,7 @@ const routes: Routes = [
   ],
   declarations: [
     AppComponent,
+    LoginComponent,
     HomeComponent,
     DetailComponent,
     FooterComponent
