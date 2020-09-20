@@ -1,11 +1,12 @@
 <nz-layout>
   <nz-header>
     <div class="logo">
-      <img src="../assets/whale.png" width="50px" height="50px"/>
+      <!-- style 设置了图片不可点击 -->
+      <img src="../assets/logo.png" height="50px" [routerLink]="['../home']" [queryParams]="{source: 'template'}" style="pointer-events: none;"/>
     </div>
-    <ul nz-menu nzTheme="dark" nzMode="horizontal" [nzSelectable]="true">
+    <ul nz-menu nzTheme="dark" nzMode="horizontal" [nzSelectable]="true" style="margin-left: 15%">
       <li nz-menu-item [routerLink]="['../home']" [queryParams]="{source: 'template'}">PPT模板</li>
-      <li nz-menu-item [routerLink]="['../home']" [queryParams]="{source: 'background'}" >PPT背景</li>
+      <!--<li nz-menu-item [routerLink]="['../home']" [queryParams]="{source: 'background'}" >PPT背景</li>-->
       <!--<span (click)="showModal()" style="float: right">登录/注册</span>-->&nbsp;&nbsp;
     </ul>
     <!--<div>
@@ -45,7 +46,7 @@
       <!--<span *ngFor="let bar of footerNavBar" style="margin-right: 20px">{{bar}}</span>-->
       <a *ngFor="let bar of footerNavBar" style="margin-right: 20px;display: inline; text-decoration: none;color: #a6adb4" (click)="showPromptPage(bar)">{{bar}}</a>
       <br/>
-      <span>Copyright © 2020 9ishare.top All Rights Reserved.</span>
+      <span>Copyright © 2020 91ppt.club All Rights Reserved. <a target="_blank" href="http://beian.miit.gov.cn">鲁ICP备2020037796号</a></span>
     </div>
     <nz-back-top></nz-back-top>
   </nz-footer>

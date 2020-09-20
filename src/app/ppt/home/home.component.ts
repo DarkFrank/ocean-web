@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   resourceURL = 'http://123.56.128.130:10220/ocean/images/'; // 缩略图地址
   classifications = [];
   templateType = '';
-
+  src = '../assets/ocean.png';
   // pageList: any = [];
   pageList: any [];
   defaultClassificationList = [
@@ -417,6 +417,7 @@ export class HomeComponent implements OnInit {
   }
 
   searchData(templateType: string) {
+    // Query data.
     this.templateType = templateType;
     this.powerPointService.getPPT(this.pageIndex, this.pageSize, templateType).subscribe(
       (result: any) => {
@@ -424,5 +425,7 @@ export class HomeComponent implements OnInit {
         this.totalCount = result.totalElements;
       }
     );
+    // Scroll to top.
+    window.scrollTo(0, 0);
   }
 }

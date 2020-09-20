@@ -31,8 +31,8 @@ export class FooterComponent implements OnInit{
     this.barName = content;
     // document.getElementsByTagName('body').scrollTop(0);
     // this.elementRef.nativeElement('#page').animate( {scrollTop: 0}, 500);
-    document.documentElement.scrollIntoView();
-
+    // document.documentElement.scrollIntoView();
+    window.scrollTo(0, 0);
 
   }
 }

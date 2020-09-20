@@ -1,8 +1,21 @@
 <!--<div class="inner-content">-->
   <!-- 模板信息统计区域 -->
 <div style="width: 1140px;margin: 20px auto;">
+
+  <!-- 页面跑马灯 -->
+  <div>
+    <marquee>
+      <b>
+        <span style="color: coral">
+          您好，欢迎使用久逸网，您的亲赖是我们成长的动力，感谢您的支持。&nbsp;&nbsp;
+          站内资源定期更新，敬请关注。&nbsp;&nbsp;
+        </span>
+      </b>
+    </marquee>
+  </div>
+
+  <!--<nz-divider nzText="模板分类" nzOrientation="left"></nz-divider>-->
   <div style="padding: 20px;background-color: white">
-    <!--<nz-divider nzText="模板分类" nzOrientation="left"></nz-divider>-->
     <h3>模板分类</h3>
     <div>
       <nz-row>
@@ -12,6 +25,7 @@
       </nz-row>
     </div>
   </div>
+
   <!-- 资源展示区域 -->
   <div nz-row nzJustify="center" style="margin-top: 20px">
     <div nz-col [nzSpan]="6" *ngFor="let resource of pageList">

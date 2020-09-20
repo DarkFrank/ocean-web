@@ -25,3 +25,14 @@ nz-content {
 nz-footer {
   text-align: center;
 }
+
+/**
+内嵌图片不可选中css
+ */
+.pic-none-selected {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
