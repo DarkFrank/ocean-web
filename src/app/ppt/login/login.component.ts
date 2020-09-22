@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
   resourceList = []; // 资源数组
   resourceURL = 'http://123.56.128.130:10220/ocean/images/'; // 缩略图地址
   classifications = [];
-  templateType = '';
+  type = ''; // PPT资源大类
+  classification = ''; // PPT资源二级分类
 
   // pageList: any = [];
   pageList: any [];
@@ -378,10 +379,10 @@ export class LoginComponent implements OnInit {
     // 查询模板数据信息
     this.route.queryParams.subscribe((data) => {
       this.source = data.source;
-      this.searchData(this.templateType);
+      this.searchData(this.type, this.classification);
     });
     // 查询模板分类信息
-    this.powerPointService.getClassifications().subscribe(
+    this.powerPointService.getClassifications(this.type).subscribe(
       (result: any) => {
         if (result == null){
           // 没有返回结果有两种情况：a服务不可用 b客户端IP命中黑名单规则
@@ -416,9 +417,10 @@ export class LoginComponent implements OnInit {
     // this.router.navigateByUrl('/detail?powerpointId=' + powerpointId);
   }
 
-  searchData(templateType: string) {
-    this.templateType = templateType;
-    this.powerPointService.getPPT(this.pageIndex, this.pageSize, templateType).subscribe(
+  searchData(type: string, classification: string) {
+    this.type = type;
+    this.classification = classification;
+    this.powerPointService.getPPT(this.pageIndex, this.pageSize, type, classification).subscribe(
       (result: any) => {
         this.pageList = result.content;
         this.totalCount = result.totalElements;

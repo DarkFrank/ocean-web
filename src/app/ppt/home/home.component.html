@@ -19,8 +19,8 @@
     <h3>模板分类</h3>
     <div>
       <nz-row>
-        <nz-col nzSpan="2" *ngFor="let type of classifications" style="text-align: left;padding-top: 3px;" (click)=searchData(type)>
-          <a style="text-decoration: none;color: gray">{{type}}</a>
+        <nz-col nzSpan="2" *ngFor="let classification of classifications" style="text-align: left;padding-top: 3px;" (click)=searchData(type,classification)>
+          <a style="text-decoration: none;color: gray">{{classification}}</a>
         </nz-col>
       </nz-row>
     </div>
@@ -42,7 +42,7 @@
   </div>
   <!-- 分页组件 -->
   <nz-pagination [(nzPageIndex)]="pageIndex" [(nzPageSize)]="pageSize" [nzTotal]="totalCount"
-                 (nzPageIndexChange)="searchData(templateType)"></nz-pagination>
+                 (nzPageIndexChange)="searchData(type, classification)"></nz-pagination>
 
   <div *ngIf="pageList === []">
     <nz-alert nzBanner nzMessage="系统检测到您的访问存在异常，将对您的访问进行限制，如有问题请联系管理员。QQ：209901527"></nz-alert>
