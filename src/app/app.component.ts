@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
   title = 'ocean-web';
   isVisible = false;
   isConfirmLoading = false;
@@ -29,6 +29,8 @@ export class AppComponent {
   ];
 
   constructor(private router: Router) {
+    // 收到请求进行跳转
+    this.router.navigateByUrl('/home?type=template');
   }
 
   showPromptPage(bar: string) {
