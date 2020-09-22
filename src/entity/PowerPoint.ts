@@ -1,6 +1,7 @@
 export class PowerPoint {
   id: string;
   name: string;
+  type: string;
   classification: string;
   showRatio: string;
   fileFormat: string;

@@ -29,8 +29,10 @@ export class AppComponent{
   ];
 
   constructor(private router: Router) {
-    // 收到请求进行跳转
-    this.router.navigateByUrl('/home?type=template');
+    // 收到请求进行跳转，临时解决
+    if (window.location.href.indexOf('detail') === -1){
+      this.router.navigateByUrl('/home?type=template');
+    }
   }
 
   showPromptPage(bar: string) {
