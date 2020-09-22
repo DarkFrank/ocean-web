@@ -7,9 +7,12 @@
     <ul nz-menu nzTheme="dark" nzMode="horizontal" [nzSelectable]="true" style="margin-left: 15%">
       <li nz-menu-item [routerLink]="['../home']" [queryParams]="{type: 'template'}">PPT模板</li>
       <li nz-menu-item [routerLink]="['../home']" [queryParams]="{type: 'background'}">PPT背景</li>
-      <!--<span (click)="showModal()" style="float: right">登录/注册</span>-->&nbsp;&nbsp;
+        <a href="#" onclick='toLogin()'>
+          <img src="../assets/qq_login.jpg">
+        </a>
+      <span (click)="showModal()" style="float: right">登录/注册</span>&nbsp;&nbsp;
     </ul>
-    <!--<div>
+    <div>
       <nz-modal [(nzVisible)]="isVisible" [nzTitle]="modalTitle" [nzContent]="modalContent">
         <ng-template #modalTitle>
           登录/注册
@@ -23,13 +26,13 @@
           </div>
         </ng-template>
 
-        &lt;!&ndash;<ng-template #modalFooter>
-          &lt;!&ndash;<span>Modal Footer: </span>&ndash;&gt;
+        <ng-template #modalFooter>
+          <!--<span>Modal Footer: </span>-->
           <button nz-button nzType="default" (click)="handleCancel()">Custom Callback</button>
           <button nz-button nzType="primary" (click)="handleOk()" [nzLoading]="isConfirmLoading">Custom Submit</button>
-        </ng-template>&ndash;&gt;
+        </ng-template>
       </nz-modal>
-    </div>-->
+    </div>
   </nz-header>
   <nz-content>
     <!--<nz-breadcrumb>

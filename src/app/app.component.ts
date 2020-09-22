@@ -30,9 +30,9 @@ export class AppComponent{
 
   constructor(private router: Router) {
     // 收到请求进行跳转，临时解决
-    if (window.location.href.indexOf('detail') === -1){
+    /*if (window.location.href.indexOf('detail') === -1){
       this.router.navigateByUrl('/home?type=template');
-    }
+    }*/
   }
 
   showPromptPage(bar: string) {
@@ -56,4 +56,10 @@ export class AppComponent{
   handleCancel(): void {
     this.isVisible = false;
   }
+
+  toLogin(): void{
+    window.open('oauth/index.php', 'TencentLogin',
+      'width=450,height=320,menubar=0,scrollbars=1,resizable=1,status=1,titlebar=0,toolbar=0,location=1');
+  }
+
 }
