@@ -7,9 +7,11 @@
     <ul nz-menu nzTheme="dark" nzMode="horizontal" [nzSelectable]="true" style="margin-left: 15%">
       <li nz-menu-item [routerLink]="['../home']" [queryParams]="{type: 'template'}">PPT模板</li>
       <li nz-menu-item [routerLink]="['../home']" [queryParams]="{type: 'background'}">PPT背景</li>
-        <a href="#" onclick='toLogin()'>
+       <!-- <a href="#" onclick='toLogin()'>
           <img src="../assets/qq_login.jpg">
-        </a>
+        </a>-->
+
+
       <span (click)="showModal()" style="float: right">登录/注册</span>&nbsp;&nbsp;
     </ul>
     <div>
@@ -34,6 +36,19 @@
       </nz-modal>
     </div>
   </nz-header>
+
+  <script type="text/javascript"  charset="utf-8"
+          src="http://connect.qq.com/qc_jssdk.js"
+          data-appid="101907160"
+          data-redirecturi="http://www.91ppt.club/home?source=template"
+  ></script>
+  <span id="qqLoginBtn"></span>
+  <script type="text/javascript">
+    QC.Login({
+      btnId:"qqLoginBtn"	//插入按钮的节点id
+    });
+  </script>
+
   <nz-content>
     <!--<nz-breadcrumb>
       <nz-breadcrumb-item>Home</nz-breadcrumb-item>
