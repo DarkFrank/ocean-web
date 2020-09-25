@@ -4,60 +4,21 @@
       <!-- style 设置了图片不可点击 -->
       <img src="../assets/logo.png" height="50px" [routerLink]="['../home']" [queryParams]="{type: 'template'}" style="pointer-events: none;"/>
     </div>
-    <ul nz-menu nzTheme="dark" nzMode="horizontal" [nzSelectable]="true" style="margin-left: 15%">
+    <ul nz-menu nzTheme="dark" nzMode="horizontal" [nzSelectable]="true" style="margin-left: 20%">
       <li nz-menu-item [routerLink]="['../home']" [queryParams]="{type: 'template'}">PPT模板</li>
       <li nz-menu-item [routerLink]="['../home']" [queryParams]="{type: 'background'}">PPT背景</li>
-       <!-- <a href="#" onclick='toLogin()'>
+        <!--<a href="#" onclick='toLogin()'>
           <img src="../assets/qq_login.jpg">
         </a>-->
 
-
-      <span (click)="showModal()" style="float: right">登录/注册</span>&nbsp;&nbsp;
+      <li style="float: right" [routerLink]="['../login']">登录/注册</li>&nbsp;&nbsp;
     </ul>
-    <div>
-      <nz-modal [(nzVisible)]="isVisible" [nzTitle]="modalTitle" [nzContent]="modalContent">
-        <ng-template #modalTitle>
-          登录/注册
-        </ng-template>
-
-        <ng-template #modalContent>
-          <div align="center">
-            <p>二维码</p>
-              <img width="20px" height="20px" src="../assets/weixindenglu.svg">
-              微信扫码
-          </div>
-        </ng-template>
-
-        <ng-template #modalFooter>
-          <!--<span>Modal Footer: </span>-->
-          <button nz-button nzType="default" (click)="handleCancel()">Custom Callback</button>
-          <button nz-button nzType="primary" (click)="handleOk()" [nzLoading]="isConfirmLoading">Custom Submit</button>
-        </ng-template>
-      </nz-modal>
-    </div>
   </nz-header>
 
-  <script type="text/javascript"  charset="utf-8"
-          src="http://connect.qq.com/qc_jssdk.js"
-          data-appid="101907160"
-          data-redirecturi="http://www.91ppt.club/home?source=template"
-  ></script>
-  <span id="qqLoginBtn"></span>
-  <script type="text/javascript">
-    QC.Login({
-      btnId:"qqLoginBtn"	//插入按钮的节点id
-    });
-  </script>
+  <!--<nz-content>
 
-  <nz-content>
-    <!--<nz-breadcrumb>
-      <nz-breadcrumb-item>Home</nz-breadcrumb-item>
-      <nz-breadcrumb-item>List</nz-breadcrumb-item>
-      <nz-breadcrumb-item>App</nz-breadcrumb-item>
-    </nz-breadcrumb>-->
-    <router-outlet></router-outlet>
-  </nz-content>
-  <br/>
+  </nz-content>-->
+  <router-outlet></router-outlet>
 
   <nz-footer nz-menu nzTheme="dark" style="line-height: 50px">
     <div>

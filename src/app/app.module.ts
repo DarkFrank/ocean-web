@@ -41,6 +41,10 @@ const routes: Routes = [
   {
     path: 'prompt',
     component: FooterComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 
