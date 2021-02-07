@@ -4,7 +4,7 @@
       <!-- style 设置了图片不可点击 -->
       <img src="../assets/logo.png" height="50px" [routerLink]="['../home']" [queryParams]="{type: 'template'}" style="pointer-events: none;"/>
     </div>
-    <ul nz-menu nzTheme="dark" nzMode="horizontal" [nzSelectable]="true" style="margin-left: 20%">
+    <ul nz-menu nzTheme="dark" nzMode="horizontal" [nzSelectable]="true" style="margin-left: 20%; border: 0px">
       <li nz-menu-item [routerLink]="['../home']" [queryParams]="{type: 'template'}">PPT模板</li>
       <li nz-menu-item [routerLink]="['../home']" [queryParams]="{type: 'background'}">PPT背景</li>
         <!--<a href="#" onclick='toLogin()'>

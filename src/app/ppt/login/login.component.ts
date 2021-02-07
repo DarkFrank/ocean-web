@@ -1,4 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators
+} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {PowerPointService} from '../../../service/PowerPointService';
 import {HttpClient} from '@angular/common/http';

@@ -4,20 +4,81 @@
     <!--<div style="background-color: white;width: 20%; height: 50%;float: right">-->
     <div style="background-color: white;
                 width: 460px; height: 470px;
-                position: absolute; left: 65%;top: 80px;border-radius: 10px;">
-      <h4 style="height: 70px">快捷登陆</h4>
-      <div style="height: 270px">
-      <div style="display: inline-block; width: 140px; margin-top: 50px">
-      <img src="../../../assets/qq/qq_2.png" style="width: 100px;height: 100px" (click)="toLogin('QQ')">
-      <h4 (click)="toLogin('QQ')">QQ登陆</h4>
+                position: absolute; left: 65%;top: 80px;border-radius: 10px;color: gray;padding: 20px 10px 20px 10px;">
+
+      <!--<div style="height: 270px">
+        &lt;!&ndash;<div style="display: inline-block; width: 140px; margin-top: 50px" (click)="toLogin('QQ')">
+          <img src="../../../assets/qq/qq_2.png" style="width: 100px;height: 100px">
+          <img src="../../../assets/qq/qq_login_logo.png" style="">
+          &lt;!&ndash;<h4 (click)="toLogin('QQ')">QQ登陆</h4>&ndash;&gt;
+        </div>
+
+        <div style="display: inline-block; width: 150px">
+        <img src="../../../assets/weChat/weChat_1.png" style="width: 100px;height: 100px" (click)="toLogin('WeChart')">
+        <h4 (click)="toLogin('WeChart')">微信登陆</h4>
+        </div>&ndash;&gt;
+      </div>-->
+      <div>
+        <p>登录/注册</p>
       </div>
-      <div style="display: inline-block; width: 150px">
-      <img src="../../../assets/weChat/weChat_1.png" style="width: 100px;height: 100px" (click)="toLogin('WeChart')">
-      <h4 (click)="toLogin('WeChart')">微信登陆</h4>
+
+      <!-- 注册账户表单 -->
+      <div>
+        <ng-form>
+          用户名：<input name="userName" type="text" ngModel=[userName] />
+          密码：<input name="userName" type="text" ngModel=[userName] />
+        </ng-form>
       </div>
+
+      <div>
+        <div><span> 使用第三方账号登录</span></div>
+        <div><img src="../../../assets/qq/qq_login_logo.png" style="" (click)="toLogin('QQ')"></div>
       </div>
-      <img src="../../../assets/agreementConfirmation/agreementConfirmation.png" style="width: 20px;height: 15px; padding-right: 5px" (click)="agreementConfirmation()">
-      <h5 style="display: inline-block">勾选代表你同意<a href="#">《注册声明》</a> <a href="#">《版权声明》</a> <a href="#">《隐私声明》</a></h5>
+
+      <!-- 登录声明 -->
+      <div>
+        <img src="../../../assets/agreementConfirmation/agreementConfirmation.png" style="width: 20px;height: 15px; padding-right: 5px" (click)="agreementConfirmation()">
+        <h5 style="display: inline-block">勾选代表你同意<a href="#">《注册声明》</a> <a href="#">《版权声明》</a> <a href="#">《隐私声明》</a></h5>
+      </div>
+
+      <!--<form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="">-->
+      <form nz-form>
+        <!--<div nz-form-item>
+          <div nz-form-control [nzValidateStatus]="validateForm.controls.userName">
+            <nz-input formControlName="userName" [nzPlaceHolder]="'Username'" [nzSize]="'large'">
+              <ng-template #prefix>
+                <i class="anticon anticon-user"></i>
+              </ng-template>
+            </nz-input>
+            <div nz-form-explain *ngIf="validateForm.controls.userName.dirty&&validateForm.controls.userName.hasError('required')">Please input your username!</div>
+          </div>
+        </div>-->
+        <!--<div nz-form-item>
+          <div nz-form-control [nzValidateStatus]="validateForm.controls.password">
+            <nz-input formControlName="password" [nzType]="'password'" [nzPlaceHolder]="'Password'" [nzSize]="'large'">
+              <ng-template #prefix>
+                <i class="anticon anticon-lock"></i>
+              </ng-template>
+            </nz-input>
+            <div nz-form-explain *ngIf="validateForm.controls.password.dirty&&validateForm.controls.password.hasError('required')">Please input your Password!</div>
+          </div>
+        </div>-->
+        <div nz-form-item>
+          <div nz-form-control>
+            <label nz-checkbox formControlName="remember">
+              <span>Remember me</span>
+            </label>
+            <a class="login-form-forgot" class="login-form-forgot">Forgot password</a>
+            <button nz-button class="login-form-button" [nzType]="'primary'" [nzSize]="'large'">Log in</button>
+            Or
+            <a href="">register now!</a>
+          </div>
+        </div>
+      </form>
+
     </div>
+
+
+
   </nz-content>
 </nz-layout>
