@@ -5,7 +5,8 @@ import {HttpClient} from '@angular/common/http';
 export class PowerPointService {
 
   // domain = 'http://localhost:8080';
-  domain = 'http://123.56.128.130:8080';
+  // domain = 'http://123.56.128.130:8080';
+  domain = 'https://91ppt.club:8080';
 
   constructor(private http: HttpClient) {
   }
