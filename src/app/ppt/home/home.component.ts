@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   totalCount = 0; // 页面总数
   resourceList = []; // 资源数组
   resourceURL = 'http://123.56.128.130:10220/ocean/images/'; // 缩略图地址
+  // PPT模板类别信息对象数组
   classifications = [];
   classification = ''; // PPT资源二级分类
   src = '../assets/ocean.png';

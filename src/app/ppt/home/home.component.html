@@ -19,8 +19,8 @@
     <h3>模板分类</h3>
     <div>
       <nz-row>
-        <nz-col nzSpan="2" *ngFor="let classification of classifications" style="text-align: left;padding-top: 3px;" (click)=searchData(type,classification)>
-          <a style="text-decoration: none;color: gray">{{classification}}</a>
+        <nz-col nzSpan="2" *ngFor="let classification of classifications" style="text-align: left;padding-top: 3px;" (click)=searchData(type,classification.code)>
+          <a style="text-decoration: none;color: gray">{{classification.name}}</a>
         </nz-col>
       </nz-row>
     </div>
